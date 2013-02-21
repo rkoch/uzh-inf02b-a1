@@ -29,8 +29,9 @@ As I work on a Mac the default Tool Chain in the provided eclipse projects is `M
 
 This can be done in the project settings of each project:
 * Right-click on the project root
-* `Properties`
-* `C/C++ Build` -> `Tool Chain Editor` -> `Current toolchain` -> `MinGW GCC` (Do that in all build configurations)
+* `Properties` -> `C/C++ Build` -> `Tool Chain Editor` -> `Current toolchain` -> `MinGW GCC` (Do that in all build configurations)
+
+__Notice:__ If Eclipse still marks your code as invalid you may need to rebuild your index (the path, eclipse gets its libraries from) after changing the toolchain. This can be done with the following actions: `Right-click on the project root` -> `Index` -> `Rebuild`. After that you may need to restart eclipse in order to get everything work correctly again.
 
 The same steps can be applied to Linux/Ubuntu but the names will probably be different. If someone can provide me with a working configuration, I'd be happy to publish it here.
 
