@@ -50,36 +50,36 @@ int main(int argc, const char * argv[]) {
 	return 0;
 }
 
-	/*
-	 * 1) this method should check, if there are enough rooms in the house
-	 */
+/*
+ * 1) this method should check, if there are enough rooms in the house
+ */
 bool checkRooms(House* myHouse, Desires myDesire) {
 	return myHouse->getRooms() >= myDesire.rooms;
 }
 
-	/*
-	 * 2) this method should check, if the price isn't too high
-	 */
+/*
+ * 2) this method should check, if the price isn't too high
+ */
 bool checkPrice(House* myHouse, Desires myDesire) {
 	return myHouse->getPrice() <= myDesire.price;
 }
 
-	/*
-	 * 4) this method should calculate the perimeter of the house,
-	 * supposing it has a square shape
-	 */
+/*
+ * 4) this method should calculate the perimeter of the house,
+ * supposing it has a square shape
+ */
 float getPerimeter(House* myHouse) {
 	return std::sqrt(myHouse->getSquareMeters()) * 4;
 }
 
-	/*
-	 * 6) this method should print out a short description about the given house
-	 */
+/*
+ * 6) this method should print out a short description about the given house
+ */
 void printHouseDescription(House* myHouse) {
 	std::cout << "Address:" << std::endl;
 	std::cout << myHouse->getAddress() << std::endl;
 	std::cout << "Rooms: " << myHouse->getRooms() << std::endl;
-	int perimeter = getPerimeter(myHouse);
+	float perimeter = getPerimeter(myHouse);
 	std::cout << "Space: " << myHouse->getSquareMeters() << " (Perimeter: " << perimeter << ")" << std::endl;
 	std::cout << "Price: " << myHouse->getPrice() << std::endl;
 }
