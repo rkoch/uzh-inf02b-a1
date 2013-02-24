@@ -7,6 +7,7 @@
 //  Copyright (c) 2013 Uni Zürich. All rights reserved.
 //
 //  Authored by Remo Koch
+//  Public repository at https://github.com/rkoch/uzh-inf02b-a1
 //
 
 #include <iostream>

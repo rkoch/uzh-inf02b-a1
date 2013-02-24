@@ -1,5 +1,6 @@
 //
 //  Authored by Remo Koch
+//  Public repository at https://github.com/rkoch/uzh-inf02b-a1
 //
 
 #ifndef AMPHIBIC_VEHICLE_H_

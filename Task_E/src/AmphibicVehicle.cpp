@@ -2,8 +2,10 @@
  *  AmphibicVehicle.cpp
  *
  *  Authored by Remo Koch
+ *  Public repository at https://github.com/rkoch/uzh-inf02b-a1
  *
  */
+
 #include <iostream>
 #include <string>
 #include "AmphibicVehicle.h"

@@ -5,6 +5,7 @@
  * Updated by Rafael Ballester on 10.01.13.
  * 
  * Authored by Remo Koch
+ * Public repository at https://github.com/rkoch/uzh-inf02b-a1
  *
  */
 
