@@ -11,14 +11,16 @@
 #include "Car.h"
 #include "Ship.h"
 
+using std::string;
+
 class AmphibicVehicle: public Car, public Ship {
 
 public:
 
 	AmphibicVehicle(bool);
 
-	std::string printUsageMode();
-	std::string changeUsageMode();
+	string printUsageMode();
+	string changeUsageMode();
 
 private:
 

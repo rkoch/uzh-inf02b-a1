@@ -10,20 +10,22 @@
 #include <string>
 #include "AmphibicVehicle.h"
 
+using std::string;
+
 AmphibicVehicle::AmphibicVehicle(bool pPutSummerWheels)
 		: Car(pPutSummerWheels), Ship() {
 
 	mUsageMode = car;          // Initial usage mode is car
 }
 
-std::string AmphibicVehicle::printUsageMode() {
+string AmphibicVehicle::printUsageMode() {
 	if (mUsageMode == car) {
 		return "Car";
 	}
 	return "Ship";
 }
 
-std::string AmphibicVehicle::changeUsageMode() {
+string AmphibicVehicle::changeUsageMode() {
 	if (mUsageMode == car) {
 		mUsageMode = ship;
 		return "Car -> Ship";
