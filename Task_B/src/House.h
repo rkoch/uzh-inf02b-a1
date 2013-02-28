@@ -12,13 +12,15 @@
 
 #include <string>
 
+using std::string;
+
 #ifndef Test_house_h
 #define Test_house_h
 
 
 class House{
 public:
-    House(int rooms_, int squareMeters_, double price_, std::string street_, std::string roadNumber_, std::string postalCode_, std::string city_);
+    House(int rooms_, int squareMeters_, double price_, string street_, string roadNumber_, string postalCode_, string city_);
     /*
      * 5b) declare a destructor
      */
@@ -26,13 +28,13 @@ public:
     int getRooms();
     int getSquareMeters();
     float getPrice();
-    std::string getAddress();
+    string getAddress();
     
 private:
-    std::string street;
-    std::string roadNumber;
-    std::string postalCode;
-    std::string city;
+    string street;
+    string roadNumber;
+    string postalCode;
+    string city;
     int rooms;
     int squareMeters;
     double price;

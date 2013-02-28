@@ -12,10 +12,12 @@
 #include <iostream>
 #include "House.h"
 
+using std::string;
+
 /*
  * 5) constructor inherited from House.h
  */
-House::House(int rooms_, int squareMeters_, double price_, std::string street_, std::string roadNumber_, std::string postalCode_, std::string city_) {
+House::House(int rooms_, int squareMeters_, double price_, string street_, string roadNumber_, string postalCode_, string city_) {
 	rooms = rooms_;
 	squareMeters = squareMeters_;
 	price = price_;
@@ -47,8 +49,8 @@ float House::getPrice() {
 /*
  * 3) return a string with a address in it
  */
-std::string House::getAddress() {
-	std::string ret;
+string House::getAddress() {
+	string ret;
 
 	ret += street + " " + roadNumber + "\n";
 	ret += postalCode + " " + city + "\n";

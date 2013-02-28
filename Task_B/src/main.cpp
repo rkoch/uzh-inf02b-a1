@@ -14,6 +14,10 @@
 #include <cmath>
 #include "House.h"
 
+using std::cout;
+using std::endl;
+using std::sqrt;
+
 struct Desires {
 	int rooms;
 	int squareMeters;
@@ -70,17 +74,17 @@ bool checkPrice(House* myHouse, Desires myDesire) {
  * supposing it has a square shape
  */
 float getPerimeter(House* myHouse) {
-	return std::sqrt(myHouse->getSquareMeters()) * 4;
+	return sqrt(myHouse->getSquareMeters()) * 4;
 }
 
 /*
  * 6) this method should print out a short description about the given house
  */
 void printHouseDescription(House* myHouse) {
-	std::cout << "Address:" << std::endl;
-	std::cout << myHouse->getAddress() << std::endl;
-	std::cout << "Rooms: " << myHouse->getRooms() << std::endl;
+	cout << "Address:" << endl;
+	cout << myHouse->getAddress() << endl;
+	cout << "Rooms: " << myHouse->getRooms() << endl;
 	float perimeter = getPerimeter(myHouse);
-	std::cout << "Space: " << myHouse->getSquareMeters() << " (Perimeter: " << perimeter << ")" << std::endl;
-	std::cout << "Price: " << myHouse->getPrice() << std::endl;
+	cout << "Space: " << myHouse->getSquareMeters() << " (Perimeter: " << perimeter << ")" << endl;
+	cout << "Price: " << myHouse->getPrice() << endl;
 }
