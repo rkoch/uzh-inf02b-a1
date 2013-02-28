@@ -13,6 +13,9 @@
 #include <fstream>
 #include "ColorTable.h"
 
+using std::ifstream;
+using std::string;
+
 ColorTable::ColorTable() {
 
 }
@@ -20,10 +23,10 @@ ColorTable::ColorTable() {
 /*
  * 1) Implement reading a specific colortable given by a filename and put the color values in the color structure.
  */
-void ColorTable::readColorTable(std::string filename) {
-	std::ifstream colorFile(filename.c_str()); // open stream for given file
+void ColorTable::readColorTable(string filename) {
+	ifstream colorFile(filename.c_str()); // open stream for given file
 
-	std::string tname;
+	string tname;
 	int tr, tg, tb;
 	int idx = 0;
 	while ((idx < 8) && (colorFile >> tname >> tr >> tg >> tb)) {
@@ -40,7 +43,7 @@ void ColorTable::readColorTable(std::string filename) {
 /*
  * 2) look for a color
  */
-bool ColorTable::getColor(std::string name, Color *foundColor) {
+bool ColorTable::getColor(string name, Color *foundColor) {
 	for (int i = 0; i < 8; i++) {
 		if (colors[i].name == name) {
 			foundColor->name = colors[i].name;

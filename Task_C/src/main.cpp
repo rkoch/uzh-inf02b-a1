@@ -13,6 +13,11 @@
 #include <iostream>
 #include "ColorTable.h"
 
+using std::string;
+using std::cout;
+using std::cin;
+using std::endl;
+
 int main(int argc, const char * argv[]) {
 	ColorTable* colorTable = new ColorTable();
 	/*
@@ -21,22 +26,22 @@ int main(int argc, const char * argv[]) {
 	colorTable->readColorTable("src/colors.txt");
 
 	bool quit = false;
-	std::string input;
+	string input;
 	while (!quit) {
-		std::cout << "Please enter a color name: ";
-		std::cin >> input;
+		cout << "Please enter a color name: ";
+		cin >> input;
 
 		Color* foundColor = new Color();
 		if (input == "quit") {
 			quit = true;
 		} else if (colorTable->getColor(input, foundColor)) {
-			std::cout << foundColor->name << " = (" << foundColor->r << ", " << foundColor->g << ", " << foundColor->b << ")" << std::endl;
+			cout << foundColor->name << " = (" << foundColor->r << ", " << foundColor->g << ", " << foundColor->b << ")" << endl;
 		} else {
-			std::cout << "Could not find color \"" << input << "\"" << std::endl;
+			cout << "Could not find color \"" << input << "\"" << endl;
 		}
 	}
 
-	std::cout << "Thanks and goodbye!" << std::endl;
+	cout << "Thanks and goodbye!" << endl;
 
 	delete colorTable;
 	return 0;

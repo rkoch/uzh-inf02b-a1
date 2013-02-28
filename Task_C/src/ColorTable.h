@@ -17,9 +17,11 @@
 #include <fstream>
 #include <sstream>
 
+using std::string;
+
 struct Color
 {
-	std::string name;
+	string name;
     int r, g, b;
 };
 
@@ -28,8 +30,8 @@ class ColorTable
 public:
 	ColorTable();
     
-    void readColorTable(std::string filename);
-    bool getColor(std::string name, Color *foundColor);
+    void readColorTable(string filename);
+    bool getColor(string name, Color *foundColor);
     
 private:
     Color colors[8];
