@@ -11,19 +11,24 @@
 #include <iostream>
 #include "matrix_subtraction.h"
 
+using std::cout;
+using std::cin;
+using std::cerr;
+using std::endl;
+
 int main() {
 	int **r, **p, **q, row1, row2, col1, col2;
-	std::cout << "Matrix Subtraction Program: \n";
-	std::cout << "Enter the number of rows for the first matrix: ";
-	std::cin >> row1;
-	std::cout << "Enter the number of columns for the first matrix: ";
-	std::cin >> col1;
-	std::cout << "Enter the number of rows for the second matrix: ";
-	std::cin >> row2;
-	std::cout << "Enter the number of columns for the second matrix: ";
-	std::cin >> col2;
+	cout << "Matrix Subtraction Program: \n";
+	cout << "Enter the number of rows for the first matrix: ";
+	cin >> row1;
+	cout << "Enter the number of columns for the first matrix: ";
+	cin >> col1;
+	cout << "Enter the number of rows for the second matrix: ";
+	cin >> row2;
+	cout << "Enter the number of columns for the second matrix: ";
+	cin >> col2;
 	if (col1 != col2 || row1 != row2) {
-		std::cout << "Subtraction not possible (size mismatch)";
+		cout << "Subtraction not possible (size mismatch)";
 		return 0;
 	}
 	initialiseMemory(p, row1, col1);
@@ -32,17 +37,17 @@ int main() {
 	fill(p, row1, col1);
 	fill(q, row2, col2);
 	r = subtractMatrices(p, q, row1, col1);
-	std::cout << "First matrix: " << std::endl;
+	cout << "First matrix: " << endl;
 	display(p, row1, col1);
-	std::cout << "Second matrix: " << std::endl;
+	cout << "Second matrix: " << endl;
 	display(q, row2, col2);
-	std::cout << "Subtraction result: " << std::endl;
+	cout << "Subtraction result: " << endl;
 	display(r, row1, col2);
 	deallocateMemory(p, row1, col1);
 	deallocateMemory(q, row2, col2);
 	deallocateMemory(r, row1, col2);
-	std::cout << "Deallocation completed." << std::endl;
-	std::cout << "Program finished." << std::endl;
+	cout << "Deallocation completed." << endl;
+	cout << "Program finished." << endl;
 }
 
 // Task 1)
@@ -59,9 +64,9 @@ void initialiseMemory(int **&x, int row, int col) {
 void fill(int **&x, int row, int col) {
 	for (int i = 0; i < row; i++) {
 		for (int j = 0; j < col; j++) {
-			std::cout << "Enter element (" << i << "," << j << "): ";
-			std::cin >> x[i][j];
-			std::cerr << "We did it " << std::endl;
+			cout << "Enter element (" << i << "," << j << "): ";
+			cin >> x[i][j];
+			cerr << "We did it " << endl;
 		}
 	}
 }
@@ -83,8 +88,8 @@ int **subtractMatrices(int **x, int **y, int row, int col) {
 void display(int **val, int x, int y) {
 	for (int i = 0; i < x; i++) {
 		for (int j = 0; j < y; j++)
-			std::cout << val[i][j] << " ";
-		std::cout << std::endl;
+			cout << val[i][j] << " ";
+		cout << endl;
 	}
 }
 
