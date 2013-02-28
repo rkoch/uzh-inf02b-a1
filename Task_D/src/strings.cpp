@@ -14,9 +14,19 @@
 #include <iostream>
 #include <iomanip>
 
+using std::string;
+using std::strlen;
+using std::strcat;
+using std::strcpy;
+using std::cout;
+using std::endl;
+using std::flush;
+using std::setfill;
+using std::setw;
+
 //TASK 1)*************************************
 int getSize(char* string) {
-	return std::strlen(string);
+	return strlen(string);
 }
 //********************************************
 
@@ -25,17 +35,17 @@ void concatenate(char str1[], char str2[]) {
 	int len = getSize(str1) + getSize(str2);
 	char* buf = new char[len + 1]; // +1 for termination symbol
 
-	std::strcat(buf, str1);
-	std::strcat(buf, str2);
-	std::cout << buf; // no endl because this is done in main
+	strcpy(buf, str1);
+	strcat(buf, str2);
+	cout << buf; // no endl because this is done in main
 
 	delete buf; // delete after new
 }
 //********************************************
 
 //TASK 3)*************************************
-bool isPalindrome(std::string str) {
-	std::string rev = std::string(str.rbegin(), str.rend());
+bool isPalindrome(string str) {
+	string rev = string(str.rbegin(), str.rend());
 	return str == rev;
 }
 //********************************************
@@ -43,8 +53,8 @@ bool isPalindrome(std::string str) {
 //TASK 4)*************************************
 void printShape(int level, char character) {
 	for (int i = 0; i < level; i++) {
-		std::cout << std::setfill(' ') << std::setw(level - i - 1) << "" << std::flush;
-		std::cout << std::setfill(character) << std::setw(i * 2 + 1) << "" << std::endl;
+		cout << setfill(' ') << setw(level - i - 1) << "" << flush;
+		cout << setfill(character) << setw(i * 2 + 1) << "" << endl;
 	}
 }
 //********************************************
@@ -54,42 +64,42 @@ void printShape(int level, char character) {
 int main(int argc, char** argv) {
 
 	//Testing task 1)
-	std::cout << std::endl << std::endl;
-	std::cout << "TASK 1)" << std::endl;
-	std::cout << "---------------------" << std::endl;
+	cout << endl << endl;
+	cout << "TASK 1)" << endl;
+	cout << "---------------------" << endl;
 
 	char example[] = "abcdef";
-	std::cout << "The size of " << example << " is " << getSize(example);
+	cout << "The size of " << example << " is " << getSize(example);
 
 	//Testing task 2)
-	std::cout << std::endl << std::endl;
-	std::cout << "TASK 2)" << std::endl;
-	std::cout << "---------------------" << std::endl;
+	cout << endl << endl;
+	cout << "TASK 2)" << endl;
+	cout << "---------------------" << endl;
 
 	char str1[] = "Let's concatenate this string ";
 	char str2[] = "with this one.";
 	concatenate(str1, str2);
 
 	//Testing task 3)
-	std::cout << std::endl << std::endl;
-	std::cout << "TASK 3)" << std::endl;
-	std::cout << "---------------------" << std::endl;
+	cout << endl << endl;
+	cout << "TASK 3)" << endl;
+	cout << "---------------------" << endl;
 
-	std::string myString = "aabbcbbaa";
+	string myString = "aabbcbbaa";
 	if (isPalindrome(myString))
-		std::cout << myString << " is a palindrome" << std::endl;
+		cout << myString << " is a palindrome" << endl;
 	else
-		std::cout << myString << " is not a palindrome" << std::endl;
+		cout << myString << " is not a palindrome" << endl;
 	myString = "aabcdaa";
 	if (isPalindrome(myString))
-		std::cout << myString << " is a palindrome" << std::endl;
+		cout << myString << " is a palindrome" << endl;
 	else
-		std::cout << myString << " is not a palindrome" << std::endl;
+		cout << myString << " is not a palindrome" << endl;
 
 	//Testing task 4)
-	std::cout << std::endl << std::endl;
-	std::cout << "TASK 4)" << std::endl;
-	std::cout << "---------------------" << std::endl;
+	cout << endl << endl;
+	cout << "TASK 4)" << endl;
+	cout << "---------------------" << endl;
 
 	printShape(9, '*');
 
